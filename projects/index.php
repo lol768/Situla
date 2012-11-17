@@ -575,7 +575,7 @@ else if(isset($_GET['project']))
                               </div>
                             </div>
                             ';
-                            echo ' <a href="#edit'.$count.'" role="button" class="btn btn-mini pull-right" data-toggle="modal">Edit</a>';
+                            echo ' <a href="#edit'.$count.'" role="button" class="btn btn-mini pull-right efix" data-toggle="modal">Edit</a>';
                         }                  
                         echo '<div class="pull-right"><small><a href="http://situla.net/projects/?project='.$project.'#c'.$count.'">#'.$count.'</a></small></div>';      
                         echo '</div></div><div class="well">';
