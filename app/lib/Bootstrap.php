@@ -5,7 +5,7 @@
  * LOL SITULA
  */
 
-require_once(BASE_DIR . 'lib/URI.php')
+require_once(LIB_DIR . 'URI.php')
 
 $uriManager = new URI();
 
