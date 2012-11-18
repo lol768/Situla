@@ -6,7 +6,7 @@
  */
 
 require_once(LIB_DIR . 'URI.php');
-require_once(LIB_DIR . 'Twig/Autoloader.php')
+require_once(LIB_DIR . 'Twig/Autoloader.php');
 
 /* Start da session
  * * * * * * * * * * * * * * * * * * * * * * * */
