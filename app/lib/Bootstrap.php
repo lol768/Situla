@@ -14,17 +14,10 @@ session_start();
 
 /* Setup da views
  * * * * * * * * * * * * * * * * * * * * * * * */
-class Situla
-{
-    public static $twig;
-
-    private function __construct() {}
-}
-
 Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem(VIEWS_DIR);
-Situla::twig = new Twig_Environment($loader, array(
+$twig = new Twig_Environment($loader, array(
     'cache' => CACHE_DIR
 ));
 
