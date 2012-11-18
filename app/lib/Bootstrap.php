@@ -11,4 +11,4 @@ $uriManager = new URI();
 
 $segments = $uriManager->$segments;
 
-echo "You requested {$segments}"
+echo "You requested {$segments}";
