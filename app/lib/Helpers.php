@@ -1,6 +1,6 @@
 <?php
 
-$twig->addFunction('logged_in', new Twig_Function_Function('loggedIn'));
+Situla::twig->addFunction('logged_in', new Twig_Function_Function('loggedIn'));
 function loggedIn()
 {
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'])
