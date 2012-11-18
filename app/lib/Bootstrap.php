@@ -5,7 +5,7 @@
  * LOL SITULA
  */
 
-require_once(LIB_DIR . 'URI.php');
+require_once(LIB_DIR . 'Router.php');
 require_once(LIB_DIR . 'Twig/Autoloader.php');
 
 /* Start da session
