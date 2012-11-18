@@ -1,3 +1,9 @@
-/nbproject/private/
-/assets/img/
-/image/
+# OS files
+.DS_Store
+
+# IDE files
+nbproject
+*.iml
+.idea
+*.sublime-project
+*.sublime-workspace
