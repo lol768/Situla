@@ -7,4 +7,4 @@
 
 define('BASE_DIR', dirname(__FILE__) . '/../')
 
-require_once(BASE_DIR . 'Bootstrap.php')
+require_once(BASE_DIR . 'lib/Bootstrap.php')
