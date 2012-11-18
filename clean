@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+cache_dir_name = File.basename('app/cache')
+cache_dir = File.dirname(cache_dir_name)
+
+Dir.foreach(cache_dir) do |file|
+  if f == file_name or f == '.' or f == '..' then next
+  elsif File.directory?(file) then FileUtils.rm_rf(file)
+  else FileUtils.rm( f )
+  end
+end

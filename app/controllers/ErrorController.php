@@ -1,7 +1,6 @@
 <?php
 respond('404', function ($request) {
-    $payload = array('section' => 'error',
-        'title' => '404');
+    $payload = array('section' => 'error');
 
     echo $GLOBALS['twig']->render('404.html', $payload);
 });

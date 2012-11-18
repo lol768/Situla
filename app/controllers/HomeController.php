@@ -1,7 +1,6 @@
 <?php
 respond('/', function($request) {
-    $payload = array('section' => 'home',
-        'title' => 'Home');
+    $payload = array('section' => 'home');
 
     echo $GLOBALS['twig']->render('home.html', $payload);
 });
