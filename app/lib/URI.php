@@ -2,7 +2,7 @@
 class URI
 {
     var $uri;
-    var $segments;
+    var $segments = array();
 
     public function __construct()
     {
