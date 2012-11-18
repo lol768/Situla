@@ -17,7 +17,7 @@ session_start();
 Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem(VIEWS_DIR);
-$twig = new Twig_Environment($loader, array(
+static $twig = new Twig_Environment($loader, array(
     'cache' => CACHE_DIR
 ));
 
