@@ -21,12 +21,10 @@ $twig = new Twig_Environment($loader, array(
     'cache' => CACHE_DIR
 ));
 
+require_once(LIB_DIR . 'Helpers.php');
+
 /* Get it on
  * * * * * * * * * * * * * * * * * * * * * * * */
-respond('/[:name]', function ($request) {
-    echo 'Hello ' . $request->name;
-});
-
 foreach (glob(CONTROLLERS_DIR . '*.php') as $controller)
 {
     require_once($controller);

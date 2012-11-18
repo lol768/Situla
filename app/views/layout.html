@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>{{ title }} &middot; Situla</title>
+  <title>{% block title %}{% endblock %} &middot; Situla</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Situla is a project that helps enforce good Bukkit programming practices.">
@@ -11,12 +11,92 @@
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
   <link href="/css/app.css" rel="stylesheet">
+  {% block custom_styles %}{% endblock %}
 
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
 <body>
-  
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand">Situla</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            {% if section == 'home' %}
+              <li class="active">
+                <a href="/">Home</a>
+              </li>
+            {% else %}
+              <li>
+                <a href="/">Home</a>
+              </li>
+            {% endif %}
+
+            {% if section == 'about' %}
+              <li class="active">
+                <a href="/about">About</a>
+              </li>
+            {% else %}
+              <li>
+                <a href="/about">About</a>
+              </li>
+            {% endif %}
+
+            {% if section == 'projects' %}
+              <li class="active">
+                <a href="/projects">Projects</a>
+              </li>
+            {% else %}
+              <li>
+                <a href="/projects">Projects</a>
+              </li>
+            {% endif %}
+          </ul>
+
+          <div class="dropdown">
+            <ul class="nav pull-right">
+              {% if logged_in %}
+                <li>
+                  <a href="/account">{{ logged_in['name'] }}
+                  {% if logged_in['alerts'] != 0 %}
+                    ({{ logged_in['alerts'] }})
+                  {% endif %}
+                </li>
+
+                <li data-toggle="dropdown" class="dropdown-toggle">
+                  <b class="caret"></b></a>
+                </li>
+              {% else %}
+                <li><a href="/account/login">Log In</a></li>
+              {% endif %}
+
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <li><a href="/account"><i class="icon-th-list"></i> Projects</a></li>
+                <li><a href="/account/alerts"><i class="icon-bell"></i> Alerts</a></li>
+                <li><a href="/account/logout"><i class="icon-off"></i> Logout</a></li>
+              </ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="container">
+    <footer>
+      &copy; Situla 2012 | <a href="https://github.com/h31ix/Situla">Github</a> | <a href="http://webchat.esper.net/?channels=situla&prompt=1">IRC</a>
+    </footer>
+  </div>
+
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap.js"></script>
+  <script src="/js/charcount.js"></script>
+  <script src="/js/alert.js"></script>
+  <script src="/js/checklist.js"></script>
+  <script src="/js/app.js"></script>
+  {% block custom_scripts %}{% endblock %}
 </body>
 </html>
