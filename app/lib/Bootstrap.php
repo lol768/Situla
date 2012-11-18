@@ -32,3 +32,4 @@ foreach (glob(CONTROLLERS_DIR . '*.php') as $controller)
     require_once($controller);
 }
 
+dispatch();
