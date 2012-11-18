@@ -8,6 +8,7 @@
 define('BASE_DIR', dirname(__FILE__) . '/../');
 define('APP_DIR', dirname(__FILE__) . '/../app/');
 define('LIB_DIR', dirname(__FILE__) . '/../app/lib/');
+define('CACHE_DIR', dirname(__FILE__) . '/../app/cache/');
 define('MODELS_DIR', dirname(__FILE__) . '/../app/models/');
 define('CONTROLLERS_DIR', dirname(__FILE__) . '/../app/controllers/');
 define('VIEWS_DIR', dirname(__FILE__) . '/../app/views/');

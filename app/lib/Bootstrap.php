@@ -6,11 +6,33 @@
  */
 
 require_once(LIB_DIR . 'URI.php');
+require_once(LIB_DIR . 'Twig/Autoloader.php')
 
-$uriManager = new URI();
+/* Start da session
+ * * * * * * * * * * * * * * * * * * * * * * * */
+session_start();
 
-$segments = $uriManager->segments;
+/* Setup da views
+ * * * * * * * * * * * * * * * * * * * * * * * */
+Twig_Autoloader::register();
 
-echo "You requested";
+$loader = new Twig_Loader_Filesystem(VIEWS_DIR);
+$twig = new Twig_Environment($loader, array(
+    'cache' => CACHE_DIR
+));
 
-print_r($segments);
+/* Get it on
+ * * * * * * * * * * * * * * * * * * * * * * * */
+$router = new Router();
+$router->setBasePath('/');
+
+foreach (glob(CONTROLLERS_DIR . '*.php') as $controller)
+{
+    require_once($controller);
+}
+
+include(APP_DIR . 'Routes.php')
+
+$match = $router->match();
+
+print_r($match);
