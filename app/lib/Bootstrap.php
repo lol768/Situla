@@ -31,7 +31,7 @@ foreach (glob(CONTROLLERS_DIR . '*.php') as $controller)
     require_once($controller);
 }
 
-include(APP_DIR . 'Routes.php')
+include(APP_DIR . 'Routes.php');
 
 $match = $router->match();
 
