@@ -18,7 +18,7 @@ class Situla
 {
     public static $twig;
 
-    private function __construct {}
+    private function __construct() {}
 }
 
 Twig_Autoloader::register();
