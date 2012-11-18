@@ -5,7 +5,7 @@
  * LOL SITULA
  */
 
-require_once(LIB_DIR . 'Router.php');
+require_once(LIB_DIR . 'klein.php');
 require_once(LIB_DIR . 'Twig/Autoloader.php');
 
 /* Start da session
@@ -23,16 +23,12 @@ $twig = new Twig_Environment($loader, array(
 
 /* Get it on
  * * * * * * * * * * * * * * * * * * * * * * * */
-$router = new Router();
-$router->setBasePath('/');
+respond('/[:name]', function ($request) {
+    echo 'Hello ' . $request->name;
+});
 
 foreach (glob(CONTROLLERS_DIR . '*.php') as $controller)
 {
     require_once($controller);
 }
 
-include(APP_DIR . 'Routes.php');
-
-$match = $router->match();
-
-print_r($match);
